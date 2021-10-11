@@ -23,5 +23,5 @@ console.log(strMatched222);
 
 const currentDate = new Date();
 console.log(currentDate.getDate());
-console.log(currentDate.getMonth());
+console.log(currentDate.getMonth()+1); // метод getMonth возвращает номер месяца, но начиная с нуля, чтобы получить привычный нам номер месяца надо прибавить единицу
 console.log(currentDate.getFullYear());
