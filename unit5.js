@@ -40,7 +40,7 @@ console.log(numbers);
 
 function compareNums(a, b) {
   if (a > b) return -1;
-  if (a == b) return 0;
+  if (a === b) return 0;
   if (a < b) return 1;
 }
 
@@ -77,7 +77,7 @@ function indexOfNumber(arr, num) {
 }
 
 function indexOfNumber2(arr, num) {
-  for (i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] === num) {
       console.log(`Number ${num} has index ${i}`);
     }
@@ -89,19 +89,51 @@ indexOfNumber2([1, 2, 6, 4, 5, 6], 6);
 
 // 8. Реализовать цикл, который будет выводить число а, пока оно не станет меньше 10
 
-while (a >= 10) {
-  console.log(a);
+// let a = 23;
+// while (a >= 10) {
+//   console.log(a);
+//   a--;
+// }
+function showGreaterOrEqualTen(a) {
+  // Честно, названия лучше не придумал, буду рад совету
+  while (a >= 10) {
+    console.log(a);
+    a--;
+  }
 }
+showGreaterOrEqualTen(23);
 
 // 9. Реализовать цикл, который выводит в консоль простые числа
 
-for (let i = 2; i < num; i++) {
-  if (num % i === 0) return console.log(`Number ${num} is not a prime`);
+function checkPrime(num) {
+  if (num <= 1) {
+    return false;
+  } else {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
 }
-console.log(`Number ${num} is a prime`);
+
+function showPrimes(max) {
+  for (let i = 2; i < max; i++) {
+    if (!checkPrime(i)) continue;
+
+    console.log(`${i} is a prime number`);
+  }
+}
+
+showPrimes(50);
 
 // 10. Реализовать цикл, который выводит в консоль нечетные числа
 
-if (num % 2 !== 0) {
-  console.log(`${num} is an odd number`);
+function showOdd(num1, num2) {
+  while (num1 <= num2) {
+    if (num1 % 2 !== 0) {
+      console.log(`${num1} is an odd number`);
+    }
+    num1++;
+  }
 }
+showOdd(23, 42);
